@@ -14,7 +14,7 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 #file paths
-trained_model = "D:\my projects\customer-satisfaction-prediction\models\model.pkl"
+trained_model = r"D:\my projects\customer-satisfaction-prediction\models\model.pkl"
 
 # Create a function to get user input
 def get_user_input():
