@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 import pickle
-from src.models.predict_model import trained_model_read
 
 hide_st_style = """
             <style>
@@ -14,7 +13,7 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 #file paths
-trained_model = r"D:\my projects\customer-satisfaction-prediction\models\model.pkl"
+file_path = "models/model.pkl"
 
 # Create a function to get user input
 def get_user_input():
@@ -52,6 +51,13 @@ def get_user_input():
 # Store the user input into a variable
 user_input = get_user_input()
 
+#prediction function
+def trained_model_read(file, df):
+    with open(file, 'rb') as f:
+            pcl = pickle.load(f)
+            trained_model = pcl.predict(df)
+            return trained_model
+
 # Set a title and display the user's input
 st.title('Customer Satisfaction Prediction')
 
@@ -59,7 +65,7 @@ st.title('Customer Satisfaction Prediction')
 
 if st.button("Predict", key="Customer Satisfaction", help="A stylish button"):
 
-    predictions = trained_model_read(file = trained_model, df= user_input)
+    predictions = trained_model_read(file = file_path, df= user_input)
     # Display the prediction
     st.subheader('Prediction:')
     st.write("Your customer satisfaction range between(1-5): ",round(predictions[0], 2))
