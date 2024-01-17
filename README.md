@@ -1,7 +1,7 @@
 <div align="center">
 <h1 align="center">
 
-<br>Customer-Satisfaction-Prediction</h1>
+<br>Customer-Satisfaction-Prediction using Mlops</h1>
 
 <h3>◦ Developed with the software and tools below.</h3>
 
@@ -24,7 +24,7 @@
 
 ## 📍 Overview
 
-Customer Satisfaction Prediction End to end machine learning project
+Customer Satisfaction Prediction End to end mlops project
 
 </details>
 
